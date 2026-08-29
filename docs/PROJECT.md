@@ -10,6 +10,7 @@ Dieses Repository enthält statische, interaktive Web-Freebies für FlyLife. Akt
 - Notion ist Product Source of Truth für Ideen, Bugs, Wünsche, offene Entscheidungen und aktuellen Produktstatus.
 - Der aktuelle Code bestimmt, was tatsächlich implementiert ist.
 - Alte Notion-Historie nur lesen, wenn sie für eine konkrete Aufgabe relevant ist.
+- Notion ist **keine Langzeithistorie**; vollständige technische Historie bleibt in Git/GitHub.
 
 ## Architektur
 
@@ -49,17 +50,29 @@ GitHub Pages dient als Hosting. Bei Änderungen keine unnötige Architektur einf
 
 Keine API-Keys, Tokens, Passwörter oder sonstige Secrets in GitHub oder Notion speichern.
 
+## Notion Retention / Housekeeping
+
+Bei jedem Sync Notion aktiv klein halten:
+
+- `CURRENT STATE` aktualisieren/ersetzen statt neue Statusabsätze anzuhängen.
+- Verarbeitete `INBOX`-Punkte entfernen.
+- Erledigte `OPEN`-Punkte entfernen; echte Nutzerentscheidungen nach `WAITING FOR ME`.
+- `PRODUCT DECISIONS` nur für dauerhaft relevante Entscheidungen verwenden.
+- `CHANGELOG` auf **maximal 10 relevante Einträge bzw. ungefähr 60 Tage** begrenzen.
+- Alte technische Implementierungsberichte, Testprotokolle und Versionschroniken löschen oder gar nicht erst in Notion ablegen.
+- Git/GitHub ist die vollständige technische Langzeithistorie.
+
 ## Notion Sync
 
 Bei `Notion Sync durchführen`:
 
 1. `AGENTS.md` bzw. `CLAUDE.md` und dieses Dokument lesen.
-2. In Notion nur `CURRENT STATE`, `INBOX`, `OPEN` und relevante `PRODUCT DECISIONS` lesen.
+2. In Notion nur `CURRENT STATE`, `INBOX`, `OPEN`, `WAITING FOR ME` und relevante `PRODUCT DECISIONS` lesen.
 3. Neue Punkte gegen den aktuellen Code prüfen.
 4. Als Bug, Feature, Verbesserung, Frage oder Entscheidung klassifizieren.
 5. Änderungen minimal umsetzen.
 6. Relevante mobile/Browser-Prüfungen durchführen.
 7. Dieses Dokument nur aktualisieren, wenn sich dauerhafte technische Wahrheit ändert.
-8. Notion aktualisieren: Status, Open/Waiting/Changelog.
+8. Notion gemäß der Retention-Regel aktualisieren und aufräumen.
 9. Verarbeitete Inbox-Punkte entfernen oder verschieben.
 10. Ergebnis kurz auf Deutsch berichten.
